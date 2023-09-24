@@ -1,37 +1,61 @@
-# Singpass-Student-Loans 🤓
-Borrow smart, not hard!
-Singpass Student Loans is a one-stop platform which consolidates the capabilities of loan application and approval from 3-parties: Students, Schools and Banks. It's purpose is to streamline and make it easy for students to apply for school loans via the school and allow them to focus on their education.
+# Singpass Student Loans 🤓
 
-The problem statement, proposed solution and its benefits, planned aws architecture diagram, implemented aws architecture diagram, user workflow, and tech stack are outlined in the proposal slides.
+Borrow smart, not hard!
+
+## Problem Statement
+
+
+
+## Proposed Solution
+
+Singpass Student Loans is a one-stop platform that streamlines the process of loan application and approval for students, schools, and banks. The platform consolidates the capabilities of loan application and approval from three parties: students, schools, and banks. Its purpose is to make it easy for students to apply for school loans through their school, allowing them to focus on their education.
+
+### User Workflow
+
+1. Register student
+2. Login as student
+3. Apply for loan
+4. Register school
+5. Login as school
+6. Request loan from bank on behalf of student
+7. Login as bank
+8. Approve school registration
+9. Approve loan request
+
+### Tech Stack
+
+- Backend: Python, Flask
+- Database: PostgreSQL RDS
+- Deployment: Docker, AWS ECR, ECS, EC2
+- Testing: Postman, Unittest
+
+### Implemented AWS Architecture Diagram
+
+The proposed solution is summarised in these slides:
 [Google slides](https://docs.google.com/presentation/d/1LMR1xFt_Micqpjxa6BNI5EU_axyO9E81o4LGhPyWpyI/edit?usp=sharing)
 
-Due to time constraints, the frontend components were not implemented in this solution. Given more time, I would complete the frontend components in this wireframe. Please press play in Figma to see how the frontend components connect to one another.
-[Figma](https://www.figma.com/file/e6XEYZ9C0bzVNIXoLTN8x6/NDI-Wireframes?type=design&node-id=0%3A1&mode=design&t=HioERFttNWKGEF7L-1)
+[Insert diagram]
 
-To run the solution,
-1. Run docker
-```
-$ docker-compose build
-$ docker-compose up -d
-$ docker-compose run app
-```
+## Next Steps
 
-2. Import postman collection
-[Postman Collection](https://raw.githubusercontent.com/your-username/your-repo-name/main/postman-collection.json)
-You can call the API endpoints as-is. Postman scripts have been written to set and get the login tokens as environment variables
+Due to time constraints, the frontend components were not implemented in this solution. Given more time, I would complete the frontend components using React, connecting them to the backend API endpoints: 
 
-A sample workflow would be:
-- register student
-- login as student
-- apply for loan
-  
-- register school
+### Planned AWS Architecture Diagram
 
-- login as bank
-- bank approves school registration
+[Insert diagram]
 
-- login as school
-- school requests loan from bank on behalf of student
+### Wireframe Design
 
-- login as bank
-- bank approves the loan
+You can view the wireframe design of the frontend components by pressing play in Figma: [Figma Link](https://www.figma.com/file/e6XEYZ9C0bzVNIXoLTN8x6/NDI-Wireframes?type=design&node-id=0%3A1&mode=design&t=HioERFttNWKGEF7L-1)
+
+## Getting Started
+
+Import the postman collection to call the API endpoints:
+
+[Postman Collection](Postman Collection Link)
+
+- The API endpoints are hosted on AWS by publishing the image on ECR, deploying the containers on ECS, and deploying the application on EC2 instances
+- Postman scripts are included to automatically set and get the login tokens as environment variables
+
+## Contact Information
+Please contact me at crlam.2020@smu.edu.sg with any questions regarding this repo!
