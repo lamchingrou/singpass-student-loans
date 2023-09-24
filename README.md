@@ -32,10 +32,10 @@ Singpass Student Loans is a one-stop platform that streamlines the process of lo
 
 ### Implemented AWS Architecture Diagram
 
+[Insert diagram]
+
 The proposed solution is summarised in these slides:
 [Google slides](https://docs.google.com/presentation/d/1LMR1xFt_Micqpjxa6BNI5EU_axyO9E81o4LGhPyWpyI/edit?usp=sharing)
-
-[Insert diagram]
 
 ## Next Steps
 
