@@ -4,6 +4,7 @@ Borrow smart, not hard!
 
 ## Problem Statement
 
+Many students face significant challenges when applying for a tuition loan through the university, which can be a time-consuming and frustrating process. The current process requires students to complete numerous forms and sign multiple documents, often resulting in delays and confusion. For example, when applying for loans, students would have to physically head down to the school premise to sign loan forms as a way to show the integrity of the student's signature. Additionally, students must also liaise with banks, which can add an extra layer of complexity and bureaucracy. For example, students would have to get approval from the banks to enable them as the paying account. This cumbersome process can deter students from pursuing financial assistance, ultimately limiting their access to education. By streamlining and simplifying the tuition loan application process, we aim to make higher education more accessible for all students.
 
 
 ## Proposed Solution
