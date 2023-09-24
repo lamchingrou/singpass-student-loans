@@ -1,4 +1,4 @@
-![Rou_NDI_2](https://github.com/lamchingrou/singpass-student-loans/assets/72553981/d851005c-63cb-4862-b82a-786b51fb91bf)# Singpass Student Loans 🤓
+# Singpass Student Loans 🤓
 
 Borrow smart, not hard!
 
@@ -45,7 +45,8 @@ Due to time constraints, the frontend components were not implemented in this so
 
 ### Planned AWS Architecture Diagram
 
-![Screenshot 2023-09-25 at 5 26 53 AM](https://github.com/lamchingrou/singpass-student-loans/assets/72553981/d9725a7c-c095-48cd-b87d-e2fdc4abe787)
+![Screenshot 2023-09-25 at 5 31 31 AM](https://github.com/lamchingrou/singpass-student-loans/assets/72553981/37002623-ebdd-4746-8c00-ca05fc382996)
+
 
 ### Wireframe Design
 
