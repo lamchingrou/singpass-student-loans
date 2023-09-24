@@ -15,13 +15,14 @@ Singpass Student Loans is a one-stop platform that streamlines the process of lo
 
 1. Register student
 2. Login as student
-3. Apply for loan
+3. Apply for loan via Singpass Student Loans
 4. Register school
 5. Login as school
-6. Request loan from bank on behalf of student
+6. Request loan from bank on behalf of student via Singpass Student Loans
 7. Login as bank
-8. Approve school registration
-9. Approve loan request
+8. Approve school registration via Singpass Student Loans
+9. Approve loan request via Singpass Student Loans
+10. Student signs loan with Singpass Digital Signing on Singpass Student Loans
 
 ### Tech Stack
 
@@ -44,7 +45,7 @@ Due to time constraints, the frontend components were not implemented in this so
 
 ### Planned AWS Architecture Diagram
 
-![Screenshot 2023-09-25 at 5 25 17 AM](https://github.com/lamchingrou/singpass-student-loans/assets/72553981/73df7525-6f56-4fb8-b6b6-b9fb3e063ee8)
+![Screenshot 2023-09-25 at 5 26 53 AM](https://github.com/lamchingrou/singpass-student-loans/assets/72553981/d9725a7c-c095-48cd-b87d-e2fdc4abe787)
 
 ### Wireframe Design
 
