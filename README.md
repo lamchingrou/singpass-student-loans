@@ -24,6 +24,8 @@ Singpass Student Loans is a one-stop platform that streamlines the process of lo
 9. Approve loan request via Singpass Student Loans
 10. Student signs loan with Singpass Digital Signing on Singpass Student Loans
 
+![Screenshot 2023-09-23 at 10 42 32 PM](https://github.com/lamchingrou/singpass-student-loans/assets/72553981/8345ab6f-7e41-43d7-b74e-14383002bb93)
+
 ### Tech Stack
 
 - Backend: Python, Flask
