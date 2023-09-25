@@ -71,5 +71,13 @@ To imitate the user workflow, please make sure to follow the sequence of API cal
 - The API endpoints are hosted on AWS by publishing the image on ECR, deploying the containers on ECS, and deploying the application on EC2 instances
 - Postman scripts are included to automatically set and get the login tokens as environment variables
 
+### Troubleshooting
+If an error occurs during user registration, this means that your username has been taken during testing
+
+Run this command to reset the postgresql db on RDS, and start applying for loans again!
+```
+python manage.py recreate_db
+```
+
 ## Contact Information
 Please contact me at crlam.2020@smu.edu.sg with any questions regarding this repo!
