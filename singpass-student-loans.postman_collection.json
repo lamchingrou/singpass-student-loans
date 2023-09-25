@@ -1,0 +1,694 @@
+{
+	"info": {
+		"_postman_id": "6a5bd1e5-927f-442b-8da4-fe6c49190bee",
+		"name": "singpass-student-loans",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17611937"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "1. Student Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"username\" : \"student_username\",\n\"password\" : \"student_password\",\n\"email\" : \"email\",\n\"phone\": 89925541\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/register_Customer",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"register_Customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. 13. Student Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json();",
+									"pm.environment.set(\"customerToken\", data.token);",
+									"",
+									"pm.test(\"Verify token\", function (){ // check if token has been successfully set",
+									"    var token = pm.environment.get(\"customerToken\");",
+									"    pm.expect(token).to.eql(data.token);",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "student_password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "student_username",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/login",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14. Student View Loans",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{customerToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/getloans",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"getloans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Student Apply Loan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{customerToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"loan_amount\" : 100,\n\"loan_type\" : \"Educational_loan\",\n\"duration\" : 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/new_loan",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"new_loan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "School",
+			"item": [
+				{
+					"name": "4. School Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"username\" : \"school_username\",\n\"password\" : \"school_password\",\n\"email\" : \"email\",\n\"phone\": 98354122\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/register_Agent",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"register_Agent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8. School Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json();",
+									"pm.environment.set(\"agentToken\", data.token);",
+									"",
+									"pm.test(\"Verify token\", function (){ // check if token has been successfully set",
+									"    var token = pm.environment.get(\"agentToken\");",
+									"    pm.expect(token).to.eql(data.token);",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "school_password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "school_username",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/login",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9. School View Loans",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json();",
+									"var loans = data[\"Loans\"]",
+									"loans.forEach((loan, idx) => {",
+									"  if (loan[\"Status\"] == \"New\"){",
+									"      unapproved_loan_id = loan[\"id\"]",
+									"  }",
+									"});",
+									"pm.environment.set(\"unapproved_loan_id\", unapproved_loan_id);",
+									"",
+									"pm.test(\"Verify token\", function (){ // check if token has been successfully set",
+									"    var env_unapproved_loan_id = pm.environment.get(\"unapproved_loan_id\");",
+									"    pm.expect(env_unapproved_loan_id).to.eql(unapproved_loan_id);",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{agentToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/getloans",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"getloans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10. School request Loan from Bank on behalf of Student",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{agentToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/request_loan/{{unapproved_loan_id}}",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"request_loan",
+								"{{unapproved_loan_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bank",
+			"item": [
+				{
+					"name": "5. 11. Bank Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json();",
+									"pm.environment.set(\"adminToken\", data.token);",
+									"",
+									"pm.test(\"Verify token\", function (){ // check if token has been successfully set",
+									"    var token = pm.environment.get(\"adminToken\");",
+									"    pm.expect(token).to.eql(data.token);",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Adminpass",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/login",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bank View All Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/all_Users",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"all_Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bank View All Customers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/all_Customers",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"all_Customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bank View All Schools",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/all_Agents",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"all_Agents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Bank View all Unapproved Schools",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json();",
+									"var agent_id = data[\"Unapproved_agents\"][0][\"id\"];",
+									"pm.environment.set(\"agent_id\", agent_id);",
+									"",
+									"pm.test(\"Verify token\", function (){ // check if token has been successfully set",
+									"    var env_agent_id = pm.environment.get(\"agent_id\");",
+									"    pm.expect(env_agent_id).to.eql(agent_id);",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/all_Agent_applications",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"all_Agent_applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7. Bank Approve School",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/approve_agent/{{agent_id}}",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"approve_agent",
+								"{{agent_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bank View School's Loan requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/Agent_loan_requests/3",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"Agent_loan_requests",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12. Bank Approve Loan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/approve_loan/{{unapproved_loan_id}}",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"approve_loan",
+								"{{unapproved_loan_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bank View all Loans",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "ec2-13-212-5-132.ap-southeast-1.compute.amazonaws.com:3200/getloans",
+							"host": [
+								"ec2-13-212-5-132",
+								"ap-southeast-1",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "3200",
+							"path": [
+								"getloans"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
