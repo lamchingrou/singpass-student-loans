@@ -60,11 +60,13 @@ Due to time constraints, the frontend components were not implemented in this so
 
 You can view the wireframe design for the frontend components by pressing play in Figma: [Figma Link](https://www.figma.com/file/e6XEYZ9C0bzVNIXoLTN8x6/NDI-Wireframes?type=design&node-id=0%3A1&mode=design&t=HioERFttNWKGEF7L-1)
 
-## Getting Started
+## Try it yourself
 
-Import the postman collection to call the API endpoints:
+Import the postman collection to call the API endpoints. The API requests in the postman collection are labelled with numbers.
 
-[Postman Collection](Postman Collection Link)
+
+To imitate the user workflow, please make sure to follow the sequence of API calls: [Postman Collection Link](https://github.com/lamchingrou/singpass-student-loans/blob/main/singpass-student-loans.postman_collection.json)
+
 
 - The API endpoints are hosted on AWS by publishing the image on ECR, deploying the containers on ECS, and deploying the application on EC2 instances
 - Postman scripts are included to automatically set and get the login tokens as environment variables
