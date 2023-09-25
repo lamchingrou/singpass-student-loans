@@ -74,10 +74,7 @@ To imitate the user workflow, please make sure to follow the sequence of API cal
 ### Troubleshooting
 If an error occurs during user registration, this means that your username has been taken during testing
 
-Run this command to reset the postgresql db on RDS, and start applying for loans again!
-```
-python manage.py recreate_db
-```
+Please choose a different username, and start applying for loans!
 
 ## Contact Information
 Please contact me at crlam.2020@smu.edu.sg with any questions regarding this repo!
