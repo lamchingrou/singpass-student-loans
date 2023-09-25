@@ -67,14 +67,10 @@ Import the postman collection to call the API endpoints. The API requests in the
 
 To imitate the user workflow, please make sure to follow the sequence of API calls: [Postman Collection Link](https://github.com/lamchingrou/singpass-student-loans/blob/main/singpass-student-loans.postman_collection.json)
 
+If an error occurs during user registration, this means that your username has been taken during testing. Please choose a different username to start applying for loans
 
 - The API endpoints are hosted on AWS by publishing the image on ECR, deploying the containers on ECS, and deploying the application on EC2 instances
 - Postman scripts are included to automatically set and get the login tokens as environment variables
-
-### Troubleshooting
-If an error occurs during user registration, this means that your username has been taken during testing
-
-Please choose a different username, and start applying for loans!
 
 ## Contact Information
 Please contact me at crlam.2020@smu.edu.sg with any questions regarding this repo!
