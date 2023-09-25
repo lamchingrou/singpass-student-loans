@@ -16,12 +16,13 @@ Singpass Student Loans is a one-stop platform that streamlines the process of lo
 1. Register student
 2. Login as student
 3. Apply for loan (Singpass Digital Signing)
-4. Register school
-5. Login as school
+4. Register school 
+5. Login as school (School is not able to login until Bank approves registration)
 6. Request loan from bank on behalf of student
 7. Login as bank
 8. Approve school registration
-9. Approve loan request (Bank is able to verify student identity through Singpass Digital Signing)
+9. Approve/ reject loan request (Bank is able to verify student's identity through Singpass Digital Signing)
+10. Student view loan status
 
 ![Screenshot 2023-09-23 at 10 42 32 PM](https://github.com/lamchingrou/singpass-student-loans/assets/72553981/8345ab6f-7e41-43d7-b74e-14383002bb93)
 
@@ -31,6 +32,12 @@ Singpass Student Loans is a one-stop platform that streamlines the process of lo
 - Database: PostgreSQL RDS
 - Deployment: Docker, AWS ECR, ECS, EC2
 - Testing: Postman, Unittest
+
+### Tests
+Please refer to the tests folder:
+- API tests: Test that the APIs are working as expected
+- Setup tests: Test CRUD into database
+- Security tests: Test authentication & authorisation eg Student cannot execute Admin actions
 
 ### Implemented AWS Architecture Diagram
 
@@ -51,7 +58,7 @@ Due to time constraints, the frontend components were not implemented in this so
 
 ### Wireframe Design
 
-You can view the wireframe design of the frontend components by pressing play in Figma: [Figma Link](https://www.figma.com/file/e6XEYZ9C0bzVNIXoLTN8x6/NDI-Wireframes?type=design&node-id=0%3A1&mode=design&t=HioERFttNWKGEF7L-1)
+You can view the wireframe design for the frontend components by pressing play in Figma: [Figma Link](https://www.figma.com/file/e6XEYZ9C0bzVNIXoLTN8x6/NDI-Wireframes?type=design&node-id=0%3A1&mode=design&t=HioERFttNWKGEF7L-1)
 
 ## Getting Started
 
