@@ -47,6 +47,42 @@ Please refer to the tests folder:
 The proposed solution is summarised in these slides:
 [Google slides](https://docs.google.com/presentation/d/1LMR1xFt_Micqpjxa6BNI5EU_axyO9E81o4LGhPyWpyI/edit?usp=sharing)
 
+## Getting Started
+
+## Local
+
+Installation
+```
+$ docker-compose build
+$ docker-compose up -d
+$ docker-compose run app
+```
+
+Run tests
+```
+$ docker-compose exec app python project/tests/tests_setup.py
+$ docker-compose exec app python project/tests/tests_security.py
+$ docker-compose exec app python project/tests/tests_api.py
+```
+
+Clear the database
+```
+$ docker-compose exec app python manage.py recreate_db
+```
+
+## Cloud 
+**The AWS services hosting this application have been removed due to high cost. Please refer to the getting started on local section instead.**
+
+Steps
+1. Import the postman collection to call the API endpoints: [Postman Collection Link](https://github.com/lamchingrou/singpass-student-loans/blob/main/singpass-student-loans.postman_collection.json)
+2. The API endpoints are labelled with numbers. To imitate the user workflow, please make sure to follow the sequence of API calls
+3. If an error occurs during user registration, this means that your username has been taken during testing. Please choose a different username to start applying for loans
+
+
+Implementation
+1. The API endpoints are hosted on AWS by publishing the image on ECR, deploying the containers on ECS, and deploying the application on EC2 instances
+2. Postman scripts are included to automatically set and get the login tokens as environment variables
+
 ## Next Steps
 
 Due to time constraints, the frontend components were not implemented in this solution. Given more time, I would complete the frontend components using React, connecting them to the backend API endpoints: 
@@ -59,18 +95,6 @@ Due to time constraints, the frontend components were not implemented in this so
 ### Wireframe Design
 
 You can view the wireframe design for the frontend components by pressing play in Figma: [Figma Link](https://www.figma.com/file/e6XEYZ9C0bzVNIXoLTN8x6/NDI-Wireframes?type=design&node-id=0%3A1&mode=design&t=HioERFttNWKGEF7L-1)
-
-## Try it yourself
-
-Import the postman collection to call the API endpoints. The API requests in the postman collection are labelled with numbers.
-
-
-To imitate the user workflow, please make sure to follow the sequence of API calls: [Postman Collection Link](https://github.com/lamchingrou/singpass-student-loans/blob/main/singpass-student-loans.postman_collection.json)
-
-If an error occurs during user registration, this means that your username has been taken during testing. Please choose a different username to start applying for loans
-
-- The API endpoints are hosted on AWS by publishing the image on ECR, deploying the containers on ECS, and deploying the application on EC2 instances
-- Postman scripts are included to automatically set and get the login tokens as environment variables
 
 ## Contact Information
 Please contact me at crlam.2020@smu.edu.sg with any questions regarding this repo!
